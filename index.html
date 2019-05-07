@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>javascript</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+    <script src="script.js" ></script>
+    <style>
+        #calculate{
+        border-radius: 10px;
+        background: #FFF;
+        cursor: pointer;
+        text-align: center;
+        width: 100px;
+        padding: 5px;
+        margin: 10px;
+        border: 1px solid #999;
+      }
+  </style>
+  </head>
+  <body>
+    <a href="indexEN.html"><button value="button1" id="eng" >engels</button></a>
+    <button value="button2" id="ned" >nederlands</button><br /><br />
+    <div>
+      <input type="radio" name="gender" id="heer" >Heer</input><!--geslacht-->
+      <input type="radio" name="gender" id="mevrouw" >Mevrouw</input><br /><br />
+      <input type="text"  name="vakjes" id="name" placeholder="Naam"></input><br /><br />
+      <div id="birth_date_input">Birth Date*: <input type="date" id="birth_date"></div><div id="age_container"><span id="exact_age"> </span></div>
+      <div id="calculate">bereken*</div><!--knopje--> <br />
+      <input type="text" name="vakjes" id="adres" placeholder="Adres"></input><br /><br />
+      <input type="text" name="vakjes" id="plaats" placeholder="Woonplaats"></input><br /><br />
+      <input type="text" name="vakjes" id="postcode" placeholder="Postcode"></input><br /><br />
+      <input type="text" name="vakjes" id="nationaliteit" placeholder="nationaliteit"></input><br /><br />
+      <input type="text" name="vakjes" id="beroep" placeholder="beroep"></input><br /><br />
+      <input type="text" name="vakjes" id="opmerking" placeholder="opmerkingen" id="comments"></input>
+    </div>
+    <br />
+      <button value="submit" name="submit" onclick="javascript:regex()" id="but">submit</button>
+      <p id="demo"></p>
+  </body>
+</html>
