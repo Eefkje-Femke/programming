@@ -14,23 +14,19 @@
     }
   echo " ". "<br />";
 
+  @$id = $_POST["id"];
+  @$Prijs= $_POST['Prijs'];
+  @$Omschrijving= $_POST['Omschrijving'];
+  @$Waar= $_POST['Waar'];
+  @$Webadres= $_POST['Webadres'];
 
-  $id = $_POST["id"];
-  $Prijs= $_POST['Prijs'];
-  $Omschrijving= $_POST['Omschrijving'];
-  $Waar= $_POST['Waar'];
-  $Webadres= $_POST['Webadres'];
-
-
-  $sql="UPDATE `verlanglijstje` SET `Prijs`= '$Prijs', `Omschrijving`='$Omschrijving', `Waar` ='$Waar', `Webadres` ='$Webadres' WHERE id= $id ";
-
+  $sql="DELETE FROM `verlanglijstje` WHERE id=$id";
 
   if ($conn->query($sql) === TRUE) {
-    header('Location: verlanglijstje.php');
+    header("Location: verlanglijstje.php");
   } else {
       echo "Error updating record: " . $conn->error;
   }
-
   $conn->close();
 
 ?>

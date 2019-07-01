@@ -1,6 +1,6 @@
 <?php
     $servername='localhost';
-    $databasename= 'db_level2_eindopdr';
+    $databasename= 'db_level2_opdr2';
     $username= 'root';
     $password= '';
 
@@ -18,13 +18,14 @@
     $id = $_GET['id'];
 
 
-    $sql="SELECT * FROM eindopdracht WHERE id= $id";
+    $sql="SELECT * FROM verlanglijstje WHERE id= $id";
     $result = $conn->query($sql);
 
     if($row = $result->fetch_assoc()){
-      $Voornaam = $row["Voornaam"];
-      $Achternaam = $row["Achternaam"];
-      $Datum = $row["geboortedatum"];
+      $Prijs= $row['Prijs'];
+      $Omschrijving= $row['Omschrijving'];
+      $Waar= $row['Waar'];
+      $Webadres= $row['Webadres'];
     }
 
 
@@ -37,22 +38,25 @@
     <title>edit</title>
   </head>
     <body>
-      <div align="center">
-        <form class="" action="edit-process.php" method="post">
-          <h3>Verander hier uw Verjaardag!</h3>
-          <p>Voornaam:
-            <input type="text" name="Voornaam" value="<?php echo $Voornaam?>"/>
+      <form class="" action="edit-process.php" method="post">
+        <fieldset>
+          <h3>Verander hier uw Cadeau!</h3>
+          <p>Prijs:
+            <input type="text" name="Prijs" value="<?php echo $Prijs?>"/>
           </p>
-          <p> Achternaam:
-            <input type="text" name="Achternaam" value="<?php echo $Achternaam?>"/>
+          <p> Omschrijving:
+            <input type="text" name="Omschrijving" value="<?php echo $Omschrijving?>"/>
           </p>
-          <p> Datum:
-            <input type="date" name="Datum" value="<?php echo $Datum?>"/>
+          <p> Waar:
+            <input type="text" name="Waar" value="<?php echo $Waar?>"/>
+          </p>
+          <p> Webadres:
+            <input type="text" name="Webadres" value="<?php echo $Webadres?>"/>
           </p>
           <input type="hidden" name="id" value="<?php echo $id?>">
-            <input type="submit" name="edit" value="edit">
-              <br />
-        </form>
-    </div>
+          <input type="submit" name="edit" value="edit">
+          <br />
+        </fieldset>
+      </form>
     </body>
 </html>
