@@ -14,17 +14,19 @@
     }
   echo "  ". "<br />";
 
+
   $id = $_POST["id"];
   $artist = $_POST["artist"];
   $title = $_POST["title"];
 
-  $sql="DELETE FROM `songs` WHERE id=$id";
+  $sql="UPDATE `songs` SET `artist`= '$artist',`title`= '$title' WHERE id=$id";
 
   if ($conn->query($sql) === TRUE) {
     header("Location: oefenopdracht.php");
   } else {
       echo "Error updating record: " . $conn->error;
   }
+
   $conn->close();
 
 ?>
